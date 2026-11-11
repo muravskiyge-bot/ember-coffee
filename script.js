@@ -83,8 +83,8 @@ let blurCurrent = 0;
 let blurAnimating = false;
 
 function renderBlur() {
-  blurCurrent += (blurTarget - blurCurrent) * (reduceMotion ? 1 : 0.12);
-  if (Math.abs(blurTarget - blurCurrent) < 0.001) blurCurrent = blurTarget;
+  blurCurrent += (blurTarget - blurCurrent) * (reduceMotion ? 1 : 0.14);
+  if (Math.abs(blurTarget - blurCurrent) < 0.004) blurCurrent = blurTarget;
   bgBlurFull.style.opacity = blurCurrent.toFixed(3);
   bgPhoto.style.transform = `scale(1.06) translate3d(0, ${(-blurCurrent * 30).toFixed(1)}px, 0)`;
   if (blurCurrent !== blurTarget) {
